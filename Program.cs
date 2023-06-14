@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 using TextCopy;
-Regex formatter = new("}|\\S+ += +\\S+|\\S+", RegexOptions.Compiled);
+Regex formatter = new("}|(\"[^\"]+\"|\\S+) += +(\"[^\"]+\"|\\S+)|(\\S+|\"[^\"]+\")", RegexOptions.Compiled);
 ClipboardService.SetText(FormatCode(ClipboardService.GetText()));
 string FormatCode(string? str)
 {
